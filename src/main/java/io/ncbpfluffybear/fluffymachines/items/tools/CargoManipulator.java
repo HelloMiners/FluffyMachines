@@ -184,10 +184,11 @@ public class CargoManipulator extends SimpleSlimefunItem<ItemUseHandler> impleme
                 // Consume item in player inventory
                 for (ItemStack playerItem : playerInventory) {
                     if (SlimefunUtils.isItemSimilar(playerItem, filterItems[i], false, false)) {
+                        ItemStack clone = playerItem.clone();
                         playerItem.setAmount(playerItem.getAmount() - 1);
 
                         // Insert item into node menu
-                        nodeMenu.replaceExistingItem(CARGO_SLOTS[i], CustomItemStack.create(playerItem, 1));
+                        nodeMenu.replaceExistingItem(CARGO_SLOTS[i], CustomItemStack.create(clone, 1));
                         break;
                     }
                 }
