@@ -212,5 +212,10 @@ public class PortableCharger extends SimpleSlimefunItem<ItemUseHandler> implemen
         public final int chargeCapacity;
         public final int chargeSpeed;
 
+        private Type(int capacity, int speed) {
+            // Constructor for PortableCharger
+            this.chargeCapacity = capacity;
+            this.chargeSpeed = speed;
+        }
     }
 }
